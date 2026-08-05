@@ -1,289 +1,111 @@
 # SQL (Structured Query Language)
 
-## 1. What is SQL?
+## What is SQL?
+SQL (Structured Query Language) is a language used to communicate with relational databases.
 
-**SQL (Structured Query Language)** is a standard language used to communicate with relational databases.
-
-It is used to **create, read, update, and delete (CRUD)** data stored in a database.
-
-### Simple Definition
-
-> SQL is a language used to manage and work with relational databases.
-
----
-
-## 2. Why Do We Use SQL?
-
-SQL helps us to:
-
-- Create databases
-- Create tables
-- Insert data
-- Retrieve data
-- Update data
-- Delete data
-- Manage users and permissions
-- Perform calculations on data
-
----
-
-## 3. Real-Life Example
-
-Suppose you have an **Employee** table.
-
-| ID | Name | Salary |
-|----|------|--------|
-| 1 | Ritesh | 50000 |
-| 2 | Rahul | 45000 |
-| 3 | Aman | 60000 |
-
-Using SQL you can:
-
-- Find all employees
-- Find employees with salary greater than ₹50,000
-- Add a new employee
-- Update salary
-- Delete an employee
-
----
-
-# 4. What Can SQL Do?
-
+It is used to:
 - Create Database
 - Create Table
-- Insert Records
-- Update Records
-- Delete Records
-- Retrieve Records
-- Sort Data
-- Filter Data
-- Join Multiple Tables
-- Perform Calculations
+- Insert Data
+- Retrieve Data
+- Update Data
+- Delete Data
 
 ---
 
-# 5. SQL Categories (Most Important)
+## Why SQL?
 
-## 1. DDL (Data Definition Language)
+- Easy to manage data
+- Fast data retrieval
+- Supports CRUD operations
+- Used in almost every company
 
-Used to define or change the database structure.
+---
+
+## SQL Categories
+
+### 1. DDL (Data Definition Language)
+Used to define database structure.
 
 Commands:
-
 - CREATE
 - ALTER
 - DROP
 - TRUNCATE
 - RENAME
 
----
+Example:
+```sql
+CREATE TABLE students (
+    id INT,
+    name VARCHAR(50),
+    age INT
+);
+```
 
-## 2. DML (Data Manipulation Language)
-
+### 2. DML (Data Manipulation Language)
 Used to modify data.
 
 Commands:
-
 - INSERT
 - UPDATE
 - DELETE
 
----
+Example:
+```sql
+INSERT INTO students
+VALUES (1,'Ritesh',22);
 
-## 3. DQL (Data Query Language)
+UPDATE students
+SET age = 23
+WHERE id = 1;
 
-Used to retrieve data.
+DELETE FROM students
+WHERE id = 1;
+```
+
+### 3. DQL (Data Query Language)
 
 Command:
-
 - SELECT
 
----
+Example:
 
-## 4. DCL (Data Control Language)
+```sql
+SELECT * FROM students;
+```
 
-Used to control user permissions.
+### 4. DCL (Data Control Language)
 
 Commands:
-
 - GRANT
 - REVOKE
 
----
+Example:
 
-## 5. TCL (Transaction Control Language)
+```sql
+GRANT SELECT
+ON students
+TO user1;
+```
 
-Used to manage transactions.
+### 5. TCL (Transaction Control Language)
 
 Commands:
-
 - COMMIT
 - ROLLBACK
 - SAVEPOINT
 
----
-
-# 6. SQL Workflow
-
-```
-Database
-     ↓
-Create Table
-     ↓
-Insert Data
-     ↓
-Retrieve Data
-     ↓
-Update Data
-     ↓
-Delete Data
-```
-
----
-
-# 7. SQL Syntax Example
-
-```sql
-SELECT * FROM students;
-```
-
-Explanation:
-
-- SELECT → Retrieve data
-- * → All columns
-- FROM → Table name
-- students → Table
-
----
-
-# 8. Features of SQL
-
-- Easy to learn
-- Fast
-- Standard language
-- Supports CRUD operations
-- Supports Joins
-- Supports Functions
-- Used by almost every company
-
----
-
-# 9. Advantages of SQL
-
-- Easy data retrieval
-- Fast query execution
-- Secure
-- Standard language
-- Supports large databases
-- Easy to maintain
-
----
-
-# 10. SQL vs Database
-
-| SQL | Database |
-|------|----------|
-| A language | A place where data is stored |
-| Used to communicate with database | Stores data |
-| Executes queries | Contains tables |
-
 Example:
 
-Database → College
-
-SQL →
-
 ```sql
-SELECT * FROM students;
+COMMIT;
+ROLLBACK;
 ```
 
 ---
 
-# 11. SQL vs MySQL
-
-| SQL | MySQL |
-|------|--------|
-| Language | Database Management System (DBMS) |
-| Used to write queries | Executes SQL queries |
-| Standard language | Software |
-| Cannot store data | Stores data |
-
-Example:
-
-SQL
-
-```sql
-SELECT * FROM students;
-```
-
-MySQL executes this query and returns the result.
-
----
-
-# 12. SQL Used In
-
-- Banking
-- Amazon
-- Flipkart
-- Facebook
-- Instagram
-- Railway Reservation
-- Hospital Management
-- School Management
-- Food Delivery Apps
-
----
-
-# 13. Important Points
-
-- SQL stands for Structured Query Language.
-- SQL is used with relational databases.
-- SQL performs CRUD operations.
-- SQL is not a database.
-- MySQL, PostgreSQL, SQL Server, and Oracle use SQL.
-- SQL is one of the most important skills for Software Engineers.
-
----
-
-# Interview Questions
-
-## Q1. What is SQL?
-
-**Answer:**
-
-SQL (Structured Query Language) is a standard language used to create, retrieve, update, and delete data in relational databases.
-
----
-
-## Q2. Why do we use SQL?
-
-**Answer:**
-
-We use SQL to manage databases, create tables, insert data, update data, delete data, retrieve data, and perform data analysis.
-
----
-
-## Q3. Is SQL a programming language?
-
-**Answer:**
-
-No.
-
-SQL is a **query language**, not a general-purpose programming language.
-
----
-
-## Q4. Is SQL a database?
-
-**Answer:**
-
-No.
-
-SQL is a language used to communicate with a database.
-
----
-
-## Q5. What is CRUD?
+## CRUD Operations
 
 | Operation | SQL Command |
 |-----------|-------------|
@@ -294,75 +116,115 @@ SQL is a language used to communicate with a database.
 
 ---
 
-## Q6. What are the different types of SQL commands?
+## Important SQL Commands
 
-- DDL
-- DML
-- DQL
-- DCL
-- TCL
+### Select All
 
----
+```sql
+SELECT * FROM students;
+```
 
-## Q7. Which databases use SQL?
+### Select Specific Column
 
-- MySQL
-- PostgreSQL
-- Oracle
-- Microsoft SQL Server
-- SQLite
+```sql
+SELECT name, age
+FROM students;
+```
 
----
+### WHERE
 
-## Q8. Difference between SQL and MySQL?
+```sql
+SELECT *
+FROM students
+WHERE age > 20;
+```
 
-**SQL**
-- Language
-- Used to write queries
+### ORDER BY
 
-**MySQL**
-- Database Management System
-- Executes SQL queries
+```sql
+SELECT *
+FROM students
+ORDER BY age ASC;
+```
 
----
+### DISTINCT
 
-# Common Interview Follow-up Questions
+```sql
+SELECT DISTINCT city
+FROM students;
+```
 
-- What is DBMS?
-- What is RDBMS?
-- What is a Database?
-- What is a Table?
-- What is a Primary Key?
-- What is SQL Syntax?
-- What is CRUD?
-- Difference between SQL and NoSQL?
-- Difference between SQL and MySQL?
+### LIMIT
 
----
-
-# Quick Revision
-
-- SQL = Structured Query Language
-- SQL is a query language
-- SQL is not a database
-- SQL works with relational databases
-- SQL performs CRUD operations
-- SQL categories:
-  - DDL
-  - DML
-  - DQL
-  - DCL
-  - TCL
+```sql
+SELECT *
+FROM students
+LIMIT 5;
+```
 
 ---
 
-# Practice Questions
+## Aggregate Functions
+
+```sql
+SELECT COUNT(*) FROM students;
+SELECT SUM(salary) FROM students;
+SELECT AVG(salary) FROM students;
+SELECT MAX(salary) FROM students;
+SELECT MIN(salary) FROM students;
+```
+
+---
+
+## SQL vs MySQL
+
+| SQL | MySQL |
+|------|--------|
+| Language | Database Software |
+| Writes Queries | Executes Queries |
+
+---
+
+## SQL Workflow
+
+Database
+↓
+Create Table
+↓
+Insert Data
+↓
+Retrieve Data
+↓
+Update Data
+↓
+Delete Data
+
+---
+
+## Interview Questions
 
 1. What is SQL?
-2. Why is SQL used?
-3. Is SQL a programming language?
-4. Is SQL a database?
-5. Explain CRUD operations.
-6. Name the five categories of SQL commands.
-7. What is the difference between SQL and MySQL?
-8. Name four databases that use SQL.
+2. What is DBMS?
+3. What is RDBMS?
+4. Difference between SQL and MySQL?
+5. What is CRUD?
+6. What is DDL?
+7. What is DML?
+8. What is DQL?
+9. What is Primary Key?
+10. What is Foreign Key?
+
+---
+
+## Quick Revision
+
+- SQL = Structured Query Language
+- SQL is a query language.
+- SQL is not a database.
+- MySQL is an RDBMS.
+- CRUD = Create, Read, Update, Delete.
+- DDL = CREATE, ALTER, DROP.
+- DML = INSERT, UPDATE, DELETE.
+- DQL = SELECT.
+- DCL = GRANT, REVOKE.
+- TCL = COMMIT, ROLLBACK, SAVEPOINT.
