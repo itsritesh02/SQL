@@ -4,6 +4,8 @@ CREATE DATABASE college;
 -- Database Use
 USE college;
 
+
+
 -- Table Create
 CREATE TABLE students
 (
